@@ -1,0 +1,57 @@
+﻿@model IEnumerable<final_0922.Activity>
+
+@{
+    ViewBag.Title = "Activity";
+}
+
+<h2>Activity</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityInfo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityInfo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ActivityID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ActivityID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ActivityID })
+        </td>
+    </tr>
+}
+
+</table>

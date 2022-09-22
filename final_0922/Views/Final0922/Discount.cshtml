@@ -1,0 +1,45 @@
+﻿@model IEnumerable<final_0922.Discount>
+
+@{
+    ViewBag.Title = "Discount";
+}
+
+<h2>Discount</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomDiscountID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountInfo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomDiscountID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountInfo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

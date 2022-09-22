@@ -13,7 +13,7 @@ namespace final_0922.Controllers
         {
             MingSuEntities db = new MingSuEntities();
             var R_datas = from p in db.Room
-                          select p;
+                          select p;  
             return View(R_datas);
         }
         public ActionResult Room_Create()
